@@ -20,4 +20,5 @@ void saveFactura(struct Factura *factura);
 void leerCadena(char *cadena, int num);
 void createFactura();
 void readFactura();
-
+ void editarFactura(int cedula);
+void buscarFactura();
