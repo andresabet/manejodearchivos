@@ -22,3 +22,4 @@ void createFactura();
 void readFactura();
  void editarFactura(int cedula);
 void buscarFactura();
+void eliminarFactura()

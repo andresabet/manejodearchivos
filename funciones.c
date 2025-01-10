@@ -203,4 +203,38 @@ void buscarFactura()   {
    
 
 }
+void eliminarFactura() {
+    FILE *file = fopen("factura.dat", "rb");
+    FILE *temp = fopen("temp.dat", "wb");
+    struct Factura factura;
+    int cedula;
+    int encontrado = 0;
+
+    if (file == NULL) {
+        printf("Error al abrir el archivo\n");
+        return;
+    }
+
+    printf("Ingrese la cedula del cliente: ");
+    scanf("%d", &cedula);
+
+    while (fread(&factura, sizeof(struct Factura), 1, file)) {
+        if (factura.cedula == cedula) {
+            encontrado = 1;
+            printf("Factura eliminada con exito\n");
+        } else {
+            fwrite(&factura, sizeof(struct Factura), 1, temp);
+        }
+    }
+
+    if (!encontrado) {
+        printf("No se encontro una factura con la cedula %d\n", cedula);
+    }
+
+    fclose(file);
+    fclose(temp);
+
+    remove("factura.dat");
+    rename("temp.dat", "factura.dat");
+}
 

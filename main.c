@@ -27,6 +27,15 @@ int main (int argc, char *argv[]) {
                 scanf("%s", busqueda);
                 buscarFactura(busqueda);
                 break;
+            case 5:
+           printf("Ingrese la cedula del cliente para eliminar la factura: ");
+                scanf("%d", &cedula);
+                eliminarFactura(cedula);
+                break;
+            case 6:
+                printf("Saliendo...\n");
+                break;
+                
             default:
                 printf("Opcion no valida\n");
                 break;
