@@ -35,7 +35,7 @@ int main (int argc, char *argv[]) {
             case 6:
                 printf("Saliendo...\n");
                 break;
-                
+
             default:
                 printf("Opcion no valida\n");
                 break;
@@ -43,4 +43,5 @@ int main (int argc, char *argv[]) {
     } while (opc != 5);
 
     return 0;
+    
 }
