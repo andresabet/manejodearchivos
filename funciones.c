@@ -236,5 +236,6 @@ void eliminarFactura() {
 
     remove("factura.dat");
     rename("temp.dat", "factura.dat");
+
 }
 
